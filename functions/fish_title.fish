@@ -1,3 +1,5 @@
 function fish_title
-    echo -s (prompt_pwd) " ($__fish_prompt_hostname)"
+    set -l prompt_hostname (echo $hostname | cut -d . -f 1)
+
+    echo -s (prompt_pwd) " ($prompt_hostname)"
 end
